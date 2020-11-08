@@ -79,7 +79,7 @@ const Home = () => {
     const renderDiseases = (diseases: Disease[] | undefined) => {
         if(!diseases) {
             return (
-                <p></p>
+                <p>Nenhuma doença foi encontrada com os sintomas informados.</p>
             )
         }
         return (
