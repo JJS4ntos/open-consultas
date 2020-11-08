@@ -3,7 +3,6 @@ import React, { useState } from 'react'
 import { Tabbordion, TabPanel, TabLabel, TabContent } from 'react-tabbordion'
 import reactStringReplace from 'react-string-replace'
 import '../../assets/css/styles.css';
-import { css } from "@emotion/core";
 import { 
     ResultContainer, 
     TextArea, 
@@ -13,7 +12,8 @@ import {
     LoadContainer,
     Spinner,
     MatchCount,
-    MatchedWord
+    MatchedWord,
+    EmptyMessage
 } from './Home'
 
 const host = 'http://openconsultas-com-br.umbler.net'
@@ -79,7 +79,13 @@ const Home = () => {
     const renderDiseases = (diseases: Disease[] | undefined) => {
         if(!diseases) {
             return (
-                <p>Nenhuma doença foi encontrada com os sintomas informados.</p>
+                <div></div>
+            )
+        } else if(diseases && diseases.length === 0 && !loading) {
+            return (
+                <EmptyMessage>
+                    Nenhuma doença foi encontrada com os sintomas informados.
+                </EmptyMessage>
             )
         }
         return (

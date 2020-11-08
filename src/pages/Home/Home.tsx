@@ -70,3 +70,10 @@ export const MatchCount = styled.span`
     font-size: 13px;
     float: right;
 `
+
+export const EmptyMessage = styled.p`
+    text-align: center;
+    border-bottom: 2px solid #e7bb41;
+    display: table;
+    margin: auto;
+`
